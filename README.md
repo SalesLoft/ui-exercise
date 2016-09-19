@@ -1,4 +1,4 @@
-# SalesLoft UI Exercise
+# SalesLoft UI Exercise!
 
 ## Instructions
 Create a fluid & responsive page layout using HTML, SCSS, and JS that is based on the wireframe provided.  This is a real-world page in SalesLoft’s product.  Feel free to explore responsive concepts for the table and menu as well as sorting, pagination etc.
