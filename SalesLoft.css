@@ -1,0 +1,906 @@
+﻿/*!
+ * License: SalesLoft
+ */
+header {
+    -webkit-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    display: flex;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 5000;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    background-color: #262d3f;
+}
+
+    header.impersonating {
+        background-color: #6f6198;
+    }
+
+        header.impersonating ul.top-nav-menu li {
+            border-top-color: transparent;
+        }
+
+            header.impersonating ul.top-nav-menu li.active, header.impersonating ul.top-nav-menu li:hover {
+                border-top-color: #fff;
+                color: #fff;
+            }
+
+                header.impersonating ul.top-nav-menu li.active a, header.impersonating ul.top-nav-menu li:hover a {
+                    color: #fff;
+                }
+
+@media screen and (max-width: 1050px) {
+    header {
+        align-items: flex-start;
+    }
+}
+
+header .top-nav-menu {
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    padding-left: 10px;
+    list-style: none;
+}
+
+    header .top-nav-menu .logo {
+        display: block;
+        background-repeat: no-repeat;
+        background-image: url("https://cdn-sdr.salesloft.com/assets/sl-logomark-white-7bc42f3a1f77192590f48fc25162a905e774617c5d6af81c9e1bae97439a3bf5.svg");
+        background-size: 35px 35px;
+        width: 35px;
+        height: 35px;
+        -ms-behavior: url("/assets/backgroundsize.min.htc");
+        margin: 5px 10px 0;
+        min-width: 35px;
+        border-top: 0;
+    }
+
+@media screen and (max-width: 1050px) {
+    header .top-nav-menu .logo {
+        margin: 5px 0 0;
+    }
+}
+
+header .top-nav-menu li {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 2px;
+}
+
+    header .top-nav-menu li > a {
+        display: block;
+        padding: 30px 10px 21px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+@media screen and (max-width: 1050px) {
+    header .top-nav-menu li > a {
+        padding: 10px 7px 0;
+        font-size: 0.75rem;
+    }
+}
+
+header .top-nav-menu li:hover, header .top-nav-menu li.active {
+    border-top-color: #40bfff;
+    transition: color 0.7s, border-top-color 0.7s;
+}
+
+    header .top-nav-menu li:hover > a, header .top-nav-menu li.active > a {
+        color: #40bfff;
+    }
+
+header .top-nav-secondary-menus {
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+}
+
+@media screen and (max-width: 1050px) {
+    header .top-nav-secondary-menus {
+        right: 0;
+        top: 0;
+        z-index: -1;
+        justify-content: flex-end;
+        height: 60px;
+        width: 100%;
+    }
+}
+
+header .top-nav-secondary-menus a.active {
+    color: #40bfff;
+}
+
+header .top-nav-submenu {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding-left: 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+    header .top-nav-submenu > li {
+        padding: 0 0.5em;
+    }
+
+        header .top-nav-submenu > li > a {
+            color: #fff;
+            font-weight: 600;
+        }
+
+            header .top-nav-submenu > li > a.is-open, header .top-nav-submenu > li > a:hover {
+                color: #ab99c9;
+            }
+
+header .top-nav-usermenu {
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+    header .top-nav-usermenu > a {
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+        header .top-nav-usermenu > a .name {
+            padding-right: 0.5em;
+        }
+
+@media screen and (max-width: 1050px) {
+    header .top-nav-usermenu .account-name .name {
+        display: none;
+    }
+}
+
+header .top-nav-usermenu .account-name .fa-user {
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+    header .top-nav-usermenu .account-name .fa-user {
+        display: inline-block;
+    }
+}
+
+header li {
+    position: relative;
+    list-style-type: none;
+}
+
+    header li .dropdown-menu {
+        -webkit-animation: fadeOutUp 0.25s;
+        -o-animation: fadeOutUp 0.25s;
+        animation: fadeOutUp 0.25s;
+        top: 30px;
+    }
+
+        header li .dropdown-menu.flush-right {
+            right: 10px;
+        }
+
+    header li.open .dropdown-menu {
+        -webkit-animation: fadeInDown 0.25s;
+        -o-animation: fadeInDown 0.25s;
+        animation: fadeInDown 0.25s;
+    }
+
+    header li.open .icon {
+        color: #ab99c9;
+    }
+
+header .top-nav--task-mode-button {
+    height: 60px;
+    margin-left: 15px;
+    margin-right: -15px;
+    width: 60px;
+    background: #499cc4;
+    color: #fff;
+    cursor: pointer;
+    line-height: 60px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+    header .top-nav--task-mode-button:hover {
+        background: #3580a5;
+    }
+
+    header .top-nav--task-mode-button.ng-hide-add.ng-hide-add-active, header .top-nav--task-mode-button.ng-hide-remove {
+        transform: translateX(100%);
+    }
+
+        header .top-nav--task-mode-button.ng-hide-add, header .top-nav--task-mode-button.ng-hide-remove.ng-hide-remove-active {
+            transform: translateX(0);
+        }
+
+@media screen and (max-width: 992px) {
+    header .top-nav-search {
+        position: absolute;
+        right: 0;
+        top: 28px;
+        width: 100%;
+    }
+}
+
+header .site-search {
+    position: absolute;
+    right: -3px;
+    top: -16px;
+    z-index: 1;
+    padding: 0;
+    width: 0;
+    opacity: 0;
+    transition: width 0.4s, opacity 0.2s;
+}
+
+@media screen and (max-width: 992px) {
+    header .site-search {
+        right: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        opacity: 1;
+        transition: none;
+    }
+}
+
+header .site-search input {
+    position: relative;
+    height: 34px;
+    padding: 0;
+    background-color: #414e6f;
+    border-radius: 5px;
+    color: #fff;
+    cursor: text;
+}
+
+@media screen and (max-width: 992px) {
+    header .site-search input {
+        top: 32px;
+        padding: 15px;
+        border-radius: 0;
+        cursor: text;
+    }
+}
+
+header .site-search input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+header .site-search .search-box {
+    left: 0;
+    top: 35px;
+}
+
+@media screen and (max-width: 992px) {
+    header .site-search .search-box {
+        top: 66px;
+    }
+}
+
+header a.search {
+    position: absolute;
+    right: 6px;
+    top: -10px;
+    z-index: 2;
+    transition: color 0.4s;
+}
+
+    header a.search > span {
+        display: block;
+        position: absolute;
+        right: 2px;
+        top: -7px;
+        color: #fff;
+        font-size: 1.5625rem;
+    }
+
+@media screen and (max-width: 992px) {
+    header a.search {
+        display: none;
+    }
+}
+
+header li.is-open .site-search {
+    width: 300px;
+    opacity: 1;
+}
+
+@media screen and (max-width: 992px) {
+    header li.is-open .site-search {
+        right: 0;
+        top: 0;
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+header li.is-open .site-search input {
+    padding: 6px 12px;
+}
+
+header li.is-open a.search {
+    color: #262d3f;
+}
+
+header .event-feed .new-counter {
+    position: absolute;
+    right: -3px;
+    top: -7px;
+    height: 17px;
+    width: 17px;
+    background: #ab99c9;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.625rem;
+    line-height: 17px;
+    text-align: center;
+}
+
+header .feed-box-wrap {
+    right: -8px !important;
+}
+
+header .feed-box {
+    height: 300px;
+    margin-bottom: 0;
+    overflow: auto;
+    padding: 0;
+    width: 250px;
+}
+
+    header .feed-box li {
+        position: relative;
+        margin-bottom: -1px;
+        padding: 10px 15px;
+    }
+
+        header .feed-box li .viewed .fa-circle::before {
+            color: #57a7c9;
+        }
+
+        header .feed-box li .viewed .fa-inverse::before {
+            top: -2px;
+            content: "";
+        }
+
+        header .feed-box li .clicked .fa-circle::before {
+            color: #5b44e7;
+        }
+
+        header .feed-box li .clicked .fa-inverse::before {
+            top: -1px;
+            content: "";
+        }
+
+        header .feed-box li .failed .fa-circle::before {
+            color: #d9534f;
+        }
+
+        header .feed-box li .failed .fa-inverse::before {
+            top: -1px;
+            content: "";
+        }
+
+        header .feed-box li .replied .fa-circle::before {
+            color: #5cb74e;
+        }
+
+        header .feed-box li .replied .fa-inverse::before {
+            top: -1px;
+            content: "";
+        }
+
+        header .feed-box li .line {
+            bottom: 0;
+            left: 23px;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            width: 1px;
+            background-color: #eee;
+        }
+
+        header .feed-box li .icon {
+            display: inline-block;
+            left: 10px;
+            position: absolute;
+            z-index: 2;
+            vertical-align: top;
+        }
+
+            header .feed-box li .icon .fa-circle::before {
+                text-shadow: 0 2px 0 #fff, 0 -2px 0 #fff;
+            }
+
+        header .feed-box li .event {
+            display: inline-block;
+            margin-left: 30px;
+        }
+
+        header .feed-box li .timestamp, header .feed-box li .cadence, header .feed-box li .company, header .feed-box li .title {
+            color: #777;
+            font-size: 0.6875rem;
+        }
+
+    header .feed-box .event-type .fa-inverse::before {
+        position: relative;
+    }
+
+header #zd-open-widget {
+    width: 100%;
+    border-radius: 0;
+}
+
+header .appcues-widget-container {
+    position: fixed;
+}
+
+header .appcues-widget-icon {
+    margin: 0 0.5em;
+    color: #fff;
+    font-size: 1rem;
+}
+
+    header .appcues-widget-icon:hover, header .appcues-widget-icon .is-active {
+        color: #ab99c9;
+    }
+
+header .appcues-widget-dropdown {
+    margin-top: -15px;
+}
+
+/*Header*/
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    background-color: transparent;
+}
+
+    a:active, a:hover {
+        outline: 0;
+    }
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 0;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+    a:hover, a:focus {
+        color: #23527c;
+        text-decoration: underline;
+    }
+
+    a:focus {
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    color: inherit;
+}
+
+    h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .small, h5 small, h5 .small, h6 small, h6 .small, .h1 small, .h1 .small, .h2 small, .h2 .small, .h3 small, .h3 .small, .h4 small, .h4 .small, .h5 small, .h5 .small, .h6 small, .h6 .small {
+        font-weight: normal;
+        line-height: 1;
+        color: #777777;
+    }
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 19px;
+    margin-bottom: 9.5px;
+}
+
+    h1 small, h1 .small, .h1 small, .h1 .small, h2 small, h2 .small, .h2 small, .h2 .small, h3 small, h3 .small, .h3 small, .h3 .small {
+        font-size: 65%;
+    }
+
+h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 9.5px;
+    margin-bottom: 9.5px;
+}
+
+    h4 small, h4 .small, .h4 small, .h4 .small, h5 small, h5 .small, .h5 small, .h5 .small, h6 small, h6 .small, .h6 small, .h6 .small {
+        font-size: 75%;
+    }
+
+h1, .h1 {
+    font-size: 36px;
+}
+
+h2, .h2 {
+    font-size: 30px;
+}
+
+h3, .h3 {
+    font-size: 24px;
+}
+
+h4, .h4 {
+    font-size: 18px;
+}
+
+small, .small {
+    font-size: 85%;
+}
+
+mark, .mark {
+    background-color: #fcf8e3;
+    padding: .2em;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+    .container:before, .container:after {
+        content: " ";
+        display: table;
+    }
+
+    .container:after {
+        clear: both;
+    }
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.container-fluid, .emails-gutter, .settings {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+    .container-fluid:before, .emails-gutter:before, .settings:before, .container-fluid:after, .emails-gutter:after, .settings:after {
+        content: " ";
+        display: table;
+    }
+
+    .container-fluid:after, .emails-gutter:after, .settings:after {
+        clear: both;
+    }
+
+.row, .cadence-people-filters {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+    .row:before, .cadence-people-filters:before, .row:after, .cadence-people-filters:after {
+        content: " ";
+        display: table;
+    }
+
+    .row:after, .cadence-people-filters:after {
+        clear: both;
+    }
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+
+.col-xs-1 {
+    width: 8.3333333333%;
+}
+
+.col-xs-2 {
+    width: 16.6666666667%;
+}
+
+.col-xs-3 {
+    width: 25%;
+}
+
+.col-xs-4 {
+    width: 33.3333333333%;
+}
+
+.col-xs-5 {
+    width: 41.6666666667%;
+}
+
+.col-xs-6 {
+    width: 50%;
+}
+
+.col-xs-7 {
+    width: 58.3333333333%;
+}
+
+.col-xs-8 {
+    width: 66.6666666667%;
+}
+
+.col-xs-9 {
+    width: 75%;
+}
+
+.col-xs-10 {
+    width: 83.3333333333%;
+}
+
+.col-xs-11 {
+    width: 91.6666666667%;
+}
+
+.col-xs-12 {
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        float: left;
+    }
+
+    .col-md-1 {
+        width: 8.3333333333%;
+    }
+
+    .col-md-2 {
+        width: 16.6666666667%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33.3333333333%;
+    }
+
+    .col-md-5 {
+        width: 41.6666666667%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-7 {
+        width: 58.3333333333%;
+    }
+
+    .col-md-8 {
+        width: 66.6666666667%;
+    }
+
+    .col-md-9 {
+        width: 75%;
+    }
+
+    .col-md-10 {
+        width: 83.3333333333%;
+    }
+
+    .col-md-11 {
+        width: 91.6666666667%;
+    }
+
+    .col-md-12 {
+        width: 100%;
+    }
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    padding-top: 60px;
+    background-color: #f7f9fa;
+    -webkit-font-smoothing: antialiased;
+}
+
+    body > .body {
+        transition: width 0.4s ease-in-out;
+        width: 100%;
+    }
+
+.inline {
+    display: inline;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+.no-top-margin {
+    margin-top: 0;
+}
+
+.list-view > table > tbody > tr.is-archived:hover > td:first-child, .cadences-list > table > tbody > tr.is-archived:hover > td:first-child, .steps-list > table > tbody > tr.is-archived:hover > td:first-child, .emails-list > table > tbody > tr.is-archived:hover > td:first-child, .calls-list > table > tbody > tr.is-archived:hover > td:first-child, .import-list > table > tbody > tr.is-archived:hover > td:first-child, .import-people > table > tbody > tr.is-archived:hover > td:first-child, .people-list > table > tbody > tr.is-archived:hover > td:first-child, .crm-activity-list > table > tbody > tr.is-archived:hover > td:first-child, .crm-logs-list table > table > tbody > tr.is-archived:hover > td:first-child, .list-view > table > tbody > tr.is-archived.selected > td:first-child, .cadences-list > table > tbody > tr.is-archived.selected > td:first-child, .steps-list > table > tbody > tr.is-archived.selected > td:first-child, .emails-list > table > tbody > tr.is-archived.selected > td:first-child, .calls-list > table > tbody > tr.is-archived.selected > td:first-child, .import-list > table > tbody > tr.is-archived.selected > td:first-child, .import-people > table > tbody > tr.is-archived.selected > td:first-child, .people-list > table > tbody > tr.is-archived.selected > td:first-child, .crm-activity-list > table > tbody > tr.is-archived.selected > td:first-child, .crm-logs-list table > table > tbody > tr.is-archived.selected > td:first-child, .list-view .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .cadences-list .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .steps-list .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .emails-list .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .calls-list .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .import-list .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .import-people .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .people-list .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .crm-activity-list .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .crm-logs-list table .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .list-view .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .cadences-list .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .steps-list .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .emails-list .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .calls-list .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .import-list .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .import-people .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .people-list .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .crm-activity-list .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .crm-logs-list table .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .list-view > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .cadences-list > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .steps-list > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .emails-list > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .calls-list > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .import-list > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .import-people > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .people-list > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .crm-activity-list > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .crm-logs-list table > [loading-promise] > .loaded > table > tbody > tr.is-archived:hover > td:first-child, .list-view > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .cadences-list > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .steps-list > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .emails-list > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .calls-list > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .import-list > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .import-people > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .people-list > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .crm-activity-list > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .crm-logs-list table > [loading-promise] > .loaded > table > tbody > tr.is-archived.selected > td:first-child, .list-view > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .cadences-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .steps-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .emails-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .calls-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .import-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .import-people > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .people-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .crm-activity-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .crm-logs-list table > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .list-view > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .cadences-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .steps-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .emails-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .calls-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .import-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .import-people > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .people-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .crm-activity-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .crm-logs-list table > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .list-view > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .cadences-list > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .steps-list > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .emails-list > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .calls-list > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .import-list > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .import-people > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .people-list > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .crm-activity-list > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .crm-logs-list table > .maskable > table > tbody > tr.is-archived:hover > td:first-child, .list-view > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .cadences-list > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .steps-list > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .emails-list > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .calls-list > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .import-list > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .import-people > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .people-list > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .crm-activity-list > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .crm-logs-list table > .maskable > table > tbody > tr.is-archived.selected > td:first-child, .list-view > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .cadences-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .steps-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .emails-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .calls-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .import-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .import-people > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .people-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .crm-activity-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .crm-logs-list table > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived:hover > td:first-child, .list-view > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .cadences-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .steps-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .emails-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .calls-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .import-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .import-people > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .people-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .crm-activity-list > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child, .crm-logs-list table > .maskable .admin-salesforce-logs--table table > tbody > tr.is-archived.selected > td:first-child {
+    box-shadow: inset 5px 0 0 #c88516;
+}
+
+.list-view > table > tbody > tr:hover > td:first-child, .cadences-list > table > tbody > tr:hover > td:first-child, .steps-list > table > tbody > tr:hover > td:first-child, .emails-list > table > tbody > tr:hover > td:first-child, .calls-list > table > tbody > tr:hover > td:first-child, .import-list > table > tbody > tr:hover > td:first-child, .import-people > table > tbody > tr:hover > td:first-child, .people-list > table > tbody > tr:hover > td:first-child, .crm-activity-list > table > tbody > tr:hover > td:first-child, .crm-logs-list table > table > tbody > tr:hover > td:first-child, .list-view > table > tbody > tr.selected > td:first-child, .cadences-list > table > tbody > tr.selected > td:first-child, .steps-list > table > tbody > tr.selected > td:first-child, .emails-list > table > tbody > tr.selected > td:first-child, .calls-list > table > tbody > tr.selected > td:first-child, .import-list > table > tbody > tr.selected > td:first-child, .import-people > table > tbody > tr.selected > td:first-child, .people-list > table > tbody > tr.selected > td:first-child, .crm-activity-list > table > tbody > tr.selected > td:first-child, .crm-logs-list table > table > tbody > tr.selected > td:first-child, .list-view .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .cadences-list .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .steps-list .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .emails-list .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .calls-list .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .import-list .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .import-people .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .people-list .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .crm-activity-list .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .crm-logs-list table .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .list-view .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .cadences-list .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .steps-list .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .emails-list .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .calls-list .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .import-list .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .import-people .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .people-list .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .crm-activity-list .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .crm-logs-list table .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .list-view > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .cadences-list > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .steps-list > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .emails-list > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .calls-list > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .import-list > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .import-people > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .people-list > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .crm-activity-list > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .crm-logs-list table > [loading-promise] > .loaded > table > tbody > tr:hover > td:first-child, .list-view > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .cadences-list > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .steps-list > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .emails-list > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .calls-list > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .import-list > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .import-people > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .people-list > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .crm-activity-list > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .crm-logs-list table > [loading-promise] > .loaded > table > tbody > tr.selected > td:first-child, .list-view > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .cadences-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .steps-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .emails-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .calls-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .import-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .import-people > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .people-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .crm-activity-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .crm-logs-list table > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .list-view > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .cadences-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .steps-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .emails-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .calls-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .import-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .import-people > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .people-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .crm-activity-list > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .crm-logs-list table > [loading-promise] > .loaded .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .list-view > .maskable > table > tbody > tr:hover > td:first-child, .cadences-list > .maskable > table > tbody > tr:hover > td:first-child, .steps-list > .maskable > table > tbody > tr:hover > td:first-child, .emails-list > .maskable > table > tbody > tr:hover > td:first-child, .calls-list > .maskable > table > tbody > tr:hover > td:first-child, .import-list > .maskable > table > tbody > tr:hover > td:first-child, .import-people > .maskable > table > tbody > tr:hover > td:first-child, .people-list > .maskable > table > tbody > tr:hover > td:first-child, .crm-activity-list > .maskable > table > tbody > tr:hover > td:first-child, .crm-logs-list table > .maskable > table > tbody > tr:hover > td:first-child, .list-view > .maskable > table > tbody > tr.selected > td:first-child, .cadences-list > .maskable > table > tbody > tr.selected > td:first-child, .steps-list > .maskable > table > tbody > tr.selected > td:first-child, .emails-list > .maskable > table > tbody > tr.selected > td:first-child, .calls-list > .maskable > table > tbody > tr.selected > td:first-child, .import-list > .maskable > table > tbody > tr.selected > td:first-child, .import-people > .maskable > table > tbody > tr.selected > td:first-child, .people-list > .maskable > table > tbody > tr.selected > td:first-child, .crm-activity-list > .maskable > table > tbody > tr.selected > td:first-child, .crm-logs-list table > .maskable > table > tbody > tr.selected > td:first-child, .list-view > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .cadences-list > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .steps-list > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .emails-list > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .calls-list > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .import-list > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .import-people > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .people-list > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .crm-activity-list > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .crm-logs-list table > .maskable .admin-salesforce-logs--table table > tbody > tr:hover > td:first-child, .list-view > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .cadences-list > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .steps-list > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .emails-list > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .calls-list > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .import-list > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .import-people > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .people-list > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .crm-activity-list > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child, .crm-logs-list table > .maskable .admin-salesforce-logs--table table > tbody > tr.selected > td:first-child {
+    box-shadow: inset 5px 0 0 #005dab;
+}
+
+.list-view td.linked, .cadences-list td.linked, .steps-list td.linked, .emails-list td.linked, .calls-list td.linked, .import-list td.linked, .import-people td.linked, .people-list td.linked, .crm-activity-list td.linked, .crm-logs-list table td.linked, .list-view > [loading-promise] > .loaded td.linked, .cadences-list > [loading-promise] > .loaded td.linked, .steps-list > [loading-promise] > .loaded td.linked, .emails-list > [loading-promise] > .loaded td.linked, .calls-list > [loading-promise] > .loaded td.linked, .import-list > [loading-promise] > .loaded td.linked, .import-people > [loading-promise] > .loaded td.linked, .people-list > [loading-promise] > .loaded td.linked, .crm-activity-list > [loading-promise] > .loaded td.linked, .crm-logs-list table > [loading-promise] > .loaded td.linked, .list-view > .maskable td.linked, .cadences-list > .maskable td.linked, .steps-list > .maskable td.linked, .emails-list > .maskable td.linked, .calls-list > .maskable td.linked, .import-list > .maskable td.linked, .import-people > .maskable td.linked, .people-list > .maskable td.linked, .crm-activity-list > .maskable td.linked, .crm-logs-list table > .maskable td.linked {
+    position: relative;
+    padding: 0;
+}
+
+input.saved {
+    -webkit-animation: saved 1s;
+    -o-animation: saved 1s;
+    animation: saved 1s;
+}
+
+.searchbox, .searchbox-header {
+    position: relative;
+}
+
+    .searchbox input, .searchbox-header input {
+        padding: 0 8px 0 23px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+        outline: 0;
+    }
+
+    .searchbox::before, .searchbox-header::before {
+        left: 6px;
+        position: absolute;
+        top: 1px;
+        color: #aaa;
+        content: "\f002";
+        font-family: "FontAwesome";
+    }
+
+.searchbox-header {
+    float: right;
+    margin: 12px 20px 0;
+}
+
+.btn-separator {
+    display: inline-block;
+    padding: 6px 12px;
+    color: #999;
+    font-size: 1rem;
+    font-weight: 600;
+    vertical-align: bottom;
+}
+
+.btn, .settings-tabs li a {
+    transition: background-color 0.25s ease-in-out;
+}
+
+    .btn:hover, .settings-tabs li a:hover {
+        transition: background-color 0.25s ease-in-out;
+    }
+
+.btn-primary .spinner, .cadences-back .spinner, .step-header .people-export .spinner, .email-back .spinner, .cancel-all-pending .spinner, .retry-all-failed .spinner, .emails-gutter a.gutter-preview .spinner, .list-actions .people-move > a .spinner, .list-actions .people-export .spinner, .btn-confirm .spinner {
+    height: 14px;
+    margin: 0 5px 0 4px;
+    width: 14px;
+    border-bottom-color: transparent;
+    border-color: #fff;
+}
+
+.action-icon {
+    transition: 0.3s ease-in-out all;
+}
+
+@media screen and (max-width: 1050px) {
+    .responsive-hide {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .responsive-show {
+        display: none;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-centered, .contact-details .contact-details-actions .contact-edit, .contact-details .contact-details-footer-actions a > span, .contact-details .contact-details-footer-actions a .btn-gong, .contact-details .contact-details-footer-actions a > span.inactive, .contact-details .contact-details-footer-actions a .btn-gong.inactive, .contact-details .contact-details-stats, .contact-details .contact-details-cadences .cadence-start a, .contact-details .contact-details-add-cadence, body.harmony-ui .analytics-filter-sort {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-start, .contact-details .contact-details-footer-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.flex-end, .contact-details .contact-details-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
