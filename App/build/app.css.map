@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAM;EACJ,SAAS,EAAE,IAAI",
+"sources": ["../stylesheets/partials/_table.scss"],
+"names": [],
+"file": "app.css"
+}
