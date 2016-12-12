@@ -1,3 +1,47 @@
 table {
-  font-size: 2rem;
+	color: $font-black;
+
+
+	padding: 0 1rem;
+
+	tr {
+		height: 40px;
+	}
+
+	th {
+		text-transform: uppercase;
+	}
+
+
+
+
+}
+.tag {
+	padding: .5rem;
+	margin-right: 6px;
+	border: $dark-grey 1px solid;
+	border-radius: 2px;
+
+	&:hover {
+		background-color: darken($light-grey, 10%);
+	}
+
+	@media screen and (max-width: $mobile) {
+		display: block;
+		margin-bottom: 6px;
+	}
+}
+.stat {
+	float: left;
+	text-align: center;
+	margin: .2rem;
+	&:after {
+		content: attr(data-stat-name);
+		display: block;
+		font-size: .675rem;
+	}
+
+	@media screen and (max-width: $mobile) {
+		width: 100%;
+	}
 }

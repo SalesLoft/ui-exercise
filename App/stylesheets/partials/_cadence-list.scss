@@ -1,0 +1,14 @@
+.float-right {
+	float: right;
+}
+.add-cadence {
+	width: 100%;
+}
+
+.cadence-list {
+	width: 90%;
+	margin: 1rem auto;
+	@media screen and (max-width: $mobile) {
+		width: 100%;
+	}
+}

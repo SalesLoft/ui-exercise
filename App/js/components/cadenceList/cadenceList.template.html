@@ -1,1 +1,39 @@
-<h1>{{vm.tableData}}</h1>
+<div class="cadence-list">
+	<header>
+		<h1>Cadences</h1>
+
+	</header>
+	<a data-ng-click="vm.triggerAddCadence()">Add Cadence</a>
+	<fieldset class="add-cadence" data-ng-if="vm.addingCadence">
+		<form action="#" data-ng-submit="vm.addNewCadence()">
+			<input type="text" placeholder="Cadence Name" data-ng-model="vm.newCadence.name"/>
+			<input type="text" placeholder="Cadence Owner" data-ng-model="vm.newCadence.owner"/>
+			<input class="float-right" type="submit" />
+		</form>
+	</fieldset>
+	<table>
+		<thead>
+		<tr>
+			<th>Cadence Name</th>
+			<th>Owner</th>
+			<th>Tags</th>
+			<th>Stats</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr data-ng-repeat="c in vm.cadences">
+			<td>{{c.name}}</td>
+			<td>{{c.owner}}</td>
+			<td>
+				<span class="tag" data-ng-repeat="t in c.tags">{{t}}</span>
+			</td>
+			<td>
+				<span class="stat" data-stat-name="Total">{{c.stats.total}}</span>
+				<span class="stat" data-stat-name="Completed">{{c.stats.completed}}</span>
+				<span class="stat" data-stat-name="Removed">{{c.stats.removed}}</span>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+</div>

@@ -339,9 +339,6 @@ e?"one":"other"}})}]),F(function(){oe(A.document,Lc)}))})(window);!window.angula
 
 })();
 
-/**
- * Created by drewpfundstein on 12/8/16.
- */
 (function () {
 	'use strict';
 
@@ -352,25 +349,137 @@ e?"one":"other"}})}]),F(function(){oe(A.document,Lc)}))})(window);!window.angula
 			controllerAs: 'vm'
 		});
 
+
+	CadenceListController.$inject = ['dataservice'];
+
 	
-	function CadenceListController() {
+	function CadenceListController(dataservice) {
 		var vm = this;
+		vm.cadences = {};
+		vm.addingCadence = false;
+		vm.triggerAddCadence = triggerAddCadence;
+		vm.addNewCadence = addNewCadence;
+		vm.deleteCadence = deleteCadence;
 		
 		
 		activate();
 		
 		
 		function activate() {
-			vm.tableData = 'hello world';
+			// dataservice.getCadences().then(function (data) {
+			// 	vm.cadences = data;
+			// });
+
+			vm.cadences = [{
+				name: "Some Cadence",
+				owner: "Drew Pfundstein",
+				tags: ['stuff', 'things'],
+				stats: {
+					total: 2,
+					completed: 2,
+					removed: 2
+				}
+			}];
+		}
+
+		function triggerAddCadence() {
+			vm.addingCadence = !vm.addingCadence;
+		}
+
+		function addNewCadence() {
+			//dataservice.saveCadence(vm.newCadence);
+
+			vm.cadences.push(vm.newCadence);
+			vm.newCadence = {};
+			vm.addingCadence = false;
+		}
+
+		function deleteCadence(index) {
+			//dataservice.deleteCadence(index);
+
+			vm.cadences.splice(index, 1);
 		}
 	}
 })();
 
+angular
+	.module('app')
+	.factory('dataservice', dataservice);
+
+dataservice.$inject = ['$q'];
+
+function dataservice($q) {
+	var memData = [{
+		name: "Some Cadence",
+		owner: "Drew Pfundstein",
+		tags: ['stuff', 'things'],
+		stats: {
+			total: 2,
+			completed: 2,
+			removed: 2
+		}
+	}];
+	return {
+		getCadences: getCadences,
+		saveCadence: saveCadence
+	};
+
+	function getCadences() {
+		var deferred = $q.defer();
+		//faking deferred action for api compatibility
+		deferred.resolve(memData);
+		return deferred.promise;
+	}
+	function saveCadence(cadence) {
+		memData.push(cadence);
+	}
+	function deleteCadence(index) {
+		memData.splice(index, 1);
+	}
+}
 angular.module('app').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('js/components/cadenceList/cadenceList.template.html',
-    "<h1>{{vm.tableData}}</h1>"
+    "<div class=\"cadence-list\">\n" +
+    "	<header>\n" +
+    "		<h1>Cadences</h1>\n" +
+    "\n" +
+    "	</header>\n" +
+    "	<a data-ng-click=\"vm.triggerAddCadence()\">Add Cadence</a>\n" +
+    "	<fieldset class=\"add-cadence\" data-ng-if=\"vm.addingCadence\">\n" +
+    "		<form action=\"#\" data-ng-submit=\"vm.addNewCadence()\">\n" +
+    "			<input type=\"text\" placeholder=\"Cadence Name\" data-ng-model=\"vm.newCadence.name\"/>\n" +
+    "			<input type=\"text\" placeholder=\"Cadence Owner\" data-ng-model=\"vm.newCadence.owner\"/>\n" +
+    "			<input class=\"float-right\" type=\"submit\" />\n" +
+    "		</form>\n" +
+    "	</fieldset>\n" +
+    "	<table>\n" +
+    "		<thead>\n" +
+    "		<tr>\n" +
+    "			<th>Cadence Name</th>\n" +
+    "			<th>Owner</th>\n" +
+    "			<th>Tags</th>\n" +
+    "			<th>Stats</th>\n" +
+    "		</tr>\n" +
+    "		</thead>\n" +
+    "		<tbody>\n" +
+    "		<tr data-ng-repeat=\"c in vm.cadences\">\n" +
+    "			<td>{{c.name}}</td>\n" +
+    "			<td>{{c.owner}}</td>\n" +
+    "			<td>\n" +
+    "				<span class=\"tag\" data-ng-repeat=\"t in c.tags\">{{t}}</span>\n" +
+    "			</td>\n" +
+    "			<td>\n" +
+    "				<span class=\"stat\" data-stat-name=\"Total\">{{c.stats.total}}</span>\n" +
+    "				<span class=\"stat\" data-stat-name=\"Completed\">{{c.stats.completed}}</span>\n" +
+    "				<span class=\"stat\" data-stat-name=\"Removed\">{{c.stats.removed}}</span>\n" +
+    "			</td>\n" +
+    "		</tr>\n" +
+    "		</tbody>\n" +
+    "	</table>\n" +
+    "\n" +
+    "</div>\n"
   );
 
 }]);
