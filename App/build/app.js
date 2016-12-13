@@ -356,17 +356,23 @@ e?"one":"other"}})}]),F(function(){oe(A.document,Lc)}))})(window);!window.angula
 	function CadenceListController() {
 		var vm = this;
 		vm.cadences = {};
+		vm.tempTags = [];
 		vm.addingCadence = false;
 		vm.selectedRow = false;
 		vm.menuOpen = false;
+		vm.manageTags = false;
+
 
 		vm.triggerAddCadence = triggerAddCadence;
+		vm.triggerManageTags = triggerManageTags;
 		vm.addNewCadence = addNewCadence;
 		vm.deleteCadence = deleteCadence;
+		vm.addTag = addTag;
 		vm.select = select;
 		vm.isSelected = isSelected;
 		vm.toggleMenu = toggleMenu;
 		vm.copyCadence = copyCadence;
+		vm.updateTags = updateTags;
 		
 		
 		activate();
@@ -412,6 +418,32 @@ e?"one":"other"}})}]),F(function(){oe(A.document,Lc)}))})(window);!window.angula
 			vm.newCadence = angular.copy(vm.cadences[index]);
 			vm.addNewCadence();
 			vm.menuOpen = false;
+		}
+		
+		function updateTags() {
+			vm.triggerManageTags();
+			for (var i = 0; i < vm.tempTags.length; i++) {
+				if (vm.tempTags[i] === ''){
+					vm.tempTags.splice(i, 1);
+				}
+			}
+			vm.cadences[vm.selectedRow].tags = vm.tempTags;
+			vm.menuOpen = false;
+		}
+		function triggerManageTags() {
+
+			if (!vm.manageTags){
+				vm.tempTags = angular.copy(vm.cadences[vm.selectedRow].tags);
+
+				if (!vm.tempTags || vm.tempTags.length < 1){
+					vm.tempTags = [];
+				}
+			}
+			vm.manageTags = !vm.manageTags;
+		}
+
+		function addTag() {
+			vm.tempTags.push('');
 		}
 
 		/**
@@ -461,10 +493,6 @@ function dataservice($q) {
 			removed: 2
 		}
 	}];
-	return {
-		getCadences: getCadences,
-		saveCadence: saveCadence
-	};
 
 	function getCadences() {
 		var deferred = $q.defer();
@@ -478,6 +506,11 @@ function dataservice($q) {
 	function deleteCadence(index) {
 		memData.splice(index, 1);
 	}
+
+	return {
+		getCadences: getCadences,
+		saveCadence: saveCadence
+	};
 }
 angular.module('app').run(['$templateCache', function($templateCache) {
   'use strict';
@@ -494,6 +527,14 @@ angular.module('app').run(['$templateCache', function($templateCache) {
     "			<input type=\"text\" placeholder=\"Cadence Name\" data-ng-model=\"vm.newCadence.name\"/>\n" +
     "			<input type=\"text\" placeholder=\"Cadence Owner\" data-ng-model=\"vm.newCadence.owner\"/>\n" +
     "			<input class=\"float-right\" type=\"submit\" />\n" +
+    "		</form>\n" +
+    "	</fieldset>\n" +
+    "	<fieldset class=\"manage-tags\" data-ng-if=\"vm.manageTags\">\n" +
+    "		<hr>\n" +
+    "		<form action=\"#\" data-ng-submit=\"vm.updateTags()\">\n" +
+    "			<a href=\"#\" data-ng-click=\"vm.addTag()\">Add Tag</a>\n" +
+    "			<input data-ng-repeat=\"tag in vm.tempTags\" type=\"text\" placeholder=\"Tag Name\" data-ng-model=\"tag\" ng-blur=\"vm.tempTags[$index] = tag\"/>\n" +
+    "			<input class=\"float-right\" type=\"submit\" placeholder=\"Update\" />\n" +
     "		</form>\n" +
     "	</fieldset>\n" +
     "	<p class=\"note\">* Select a table row for more actions</p>\n" +
@@ -528,7 +569,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
     "			<div class=\"dropdown-container\">\n" +
     "				<p class=\"dropdown-button\" data-ng-click=\"vm.toggleMenu()\">Click to Manage</p>\n" +
     "				<ul class=\"dropdown-menu dropdown-select\" data-ng-if=\"vm.menuOpen\">\n" +
-    "					<li data-ng-click=>Manage Tags</li>\n" +
+    "					<li data-ng-click=\"vm.triggerManageTags()\">Manage Tags</li>\n" +
     "					<li data-ng-click=\"vm.copyCadence(vm.selectedRow)\">Copy</li>\n" +
     "					<li>Archive</li>\n" +
     "					<li>Make Private</li>\n" +

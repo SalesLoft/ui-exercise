@@ -15,6 +15,14 @@ angular.module('app').run(['$templateCache', function($templateCache) {
     "			<input class=\"float-right\" type=\"submit\" />\n" +
     "		</form>\n" +
     "	</fieldset>\n" +
+    "	<fieldset class=\"manage-tags\" data-ng-if=\"vm.manageTags\">\n" +
+    "		<hr>\n" +
+    "		<form action=\"#\" data-ng-submit=\"vm.updateTags()\">\n" +
+    "			<a href=\"#\" data-ng-click=\"vm.addTag()\">Add Tag</a>\n" +
+    "			<input data-ng-repeat=\"tag in vm.tempTags\" type=\"text\" placeholder=\"Tag Name\" data-ng-model=\"tag\" ng-blur=\"vm.tempTags[$index] = tag\"/>\n" +
+    "			<input class=\"float-right\" type=\"submit\" placeholder=\"Update\" />\n" +
+    "		</form>\n" +
+    "	</fieldset>\n" +
     "	<p class=\"note\">* Select a table row for more actions</p>\n" +
     "	<table>\n" +
     "\n" +
@@ -47,7 +55,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
     "			<div class=\"dropdown-container\">\n" +
     "				<p class=\"dropdown-button\" data-ng-click=\"vm.toggleMenu()\">Click to Manage</p>\n" +
     "				<ul class=\"dropdown-menu dropdown-select\" data-ng-if=\"vm.menuOpen\">\n" +
-    "					<li data-ng-click=>Manage Tags</li>\n" +
+    "					<li data-ng-click=\"vm.triggerManageTags()\">Manage Tags</li>\n" +
     "					<li data-ng-click=\"vm.copyCadence(vm.selectedRow)\">Copy</li>\n" +
     "					<li>Archive</li>\n" +
     "					<li>Make Private</li>\n" +

@@ -11,6 +11,14 @@
 			<input class="float-right" type="submit" />
 		</form>
 	</fieldset>
+	<fieldset class="manage-tags" data-ng-if="vm.manageTags">
+		<hr>
+		<form action="#" data-ng-submit="vm.updateTags()">
+			<a href="#" data-ng-click="vm.addTag()">Add Tag</a>
+			<input data-ng-repeat="tag in vm.tempTags" type="text" placeholder="Tag Name" data-ng-model="tag" ng-blur="vm.tempTags[$index] = tag"/>
+			<input class="float-right" type="submit" placeholder="Update" />
+		</form>
+	</fieldset>
 	<p class="note">* Select a table row for more actions</p>
 	<table>
 
@@ -43,7 +51,7 @@
 			<div class="dropdown-container">
 				<p class="dropdown-button" data-ng-click="vm.toggleMenu()">Click to Manage</p>
 				<ul class="dropdown-menu dropdown-select" data-ng-if="vm.menuOpen">
-					<li data-ng-click=>Manage Tags</li>
+					<li data-ng-click="vm.triggerManageTags()">Manage Tags</li>
 					<li data-ng-click="vm.copyCadence(vm.selectedRow)">Copy</li>
 					<li>Archive</li>
 					<li>Make Private</li>

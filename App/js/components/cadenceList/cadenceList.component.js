@@ -15,17 +15,23 @@
 	function CadenceListController() {
 		var vm = this;
 		vm.cadences = {};
+		vm.tempTags = [];
 		vm.addingCadence = false;
 		vm.selectedRow = false;
 		vm.menuOpen = false;
+		vm.manageTags = false;
+
 
 		vm.triggerAddCadence = triggerAddCadence;
+		vm.triggerManageTags = triggerManageTags;
 		vm.addNewCadence = addNewCadence;
 		vm.deleteCadence = deleteCadence;
+		vm.addTag = addTag;
 		vm.select = select;
 		vm.isSelected = isSelected;
 		vm.toggleMenu = toggleMenu;
 		vm.copyCadence = copyCadence;
+		vm.updateTags = updateTags;
 		
 		
 		activate();
@@ -71,6 +77,32 @@
 			vm.newCadence = angular.copy(vm.cadences[index]);
 			vm.addNewCadence();
 			vm.menuOpen = false;
+		}
+		
+		function updateTags() {
+			vm.triggerManageTags();
+			for (var i = 0; i < vm.tempTags.length; i++) {
+				if (vm.tempTags[i] === ''){
+					vm.tempTags.splice(i, 1);
+				}
+			}
+			vm.cadences[vm.selectedRow].tags = vm.tempTags;
+			vm.menuOpen = false;
+		}
+		function triggerManageTags() {
+
+			if (!vm.manageTags){
+				vm.tempTags = angular.copy(vm.cadences[vm.selectedRow].tags);
+
+				if (!vm.tempTags || vm.tempTags.length < 1){
+					vm.tempTags = [];
+				}
+			}
+			vm.manageTags = !vm.manageTags;
+		}
+
+		function addTag() {
+			vm.tempTags.push('');
 		}
 
 		/**
