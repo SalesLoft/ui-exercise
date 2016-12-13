@@ -1,6 +1,7 @@
 .float-right {
 	float: right;
 }
+
 .add-cadence {
 	width: 100%;
 }
@@ -13,7 +14,6 @@
 	}
 }
 
-
 .action-menu {
 	position: fixed;
 	bottom: 0;
@@ -24,6 +24,7 @@
 	background-color: #fff;
 	z-index: 200;
 }
+
 .note {
 	float: right;
 	color: $font-black;

@@ -1,11 +1,10 @@
 table {
 	color: $font-black;
-
-
 	padding: 0 1rem;
 
 	tr {
 		height: 40px;
+
 		&:hover {
 			cursor: pointer;
 		}
@@ -34,6 +33,7 @@ table {
 	float: left;
 	text-align: center;
 	margin: .2rem;
+
 	&:after {
 		content: attr(data-stat-name);
 		display: block;
