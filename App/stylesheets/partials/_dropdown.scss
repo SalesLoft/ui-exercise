@@ -1,0 +1,106 @@
+// adapted from http://refills.bourbon.io/components/
+.dropdown {
+	$base-border-color: gainsboro !default;
+	$base-border-radius: 3px !default;
+	$base-line-height: 1.5em !default;
+	$base-background-color: white !default;
+	$dark-gray: #333 !default;
+	$large-screen: 53.75em !default;
+	$base-font-color: $dark-gray !default;
+	$dropdown-color: $dark-gray;
+	$dropdown-description-color: lighten($dropdown-color, 40%);
+	$dropdown-border: 1px solid silver;
+	$dropdown-background: $base-background-color;
+	$dropdown-background-hover: darken($dropdown-background, 3%);
+	$dropdown-inner-border: 1px solid silver;
+	$dropdown-height: 40px;
+	$dropdown-padding: 1em;
+	$dropdown-distance-from-menu: 50px;
+	$dropdown-arrow-top-distance: 0;
+
+	line-height: $base-line-height;
+
+	.dropdown-container {
+		display: inline-block;
+		position: relative;
+		text-align: center;
+	}
+	.dropdown-button {
+		background: #499cc4;
+		border: $dropdown-border;
+		border-radius: $base-border-radius;
+		color: #fff;
+		cursor: pointer;
+		float: right;
+		font-size: 1rem;
+		line-height: $dropdown-height;
+		margin: .5rem 1.5rem;
+		padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
+		position: relative;
+		font-weight: bold;
+
+		@media screen and (max-width: $large-screen) {
+			font-size: 1em;
+			padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
+		}
+	}
+
+	.dropdown-button:hover {
+		background-color: darken(#499cc4, 3%);
+	}
+
+	.dropdown-button::after {
+		color: $base-font-color;
+		content: "\25B4";
+		display: block;
+		position: absolute;
+		right: $dropdown-padding;
+		top: $dropdown-arrow-top-distance;
+	}
+
+	.dropdown-menu {
+		background: $dropdown-background;
+		border: $dropdown-border;
+		border-radius: $base-border-radius;
+		box-shadow: 0 2px 2px transparentize(black, 0.8);
+		color: $dropdown-color;
+		cursor: pointer;
+		margin: 0;
+		overflow: show;
+		padding: 0;
+		position: absolute;
+		bottom: $dropdown-distance-from-menu;
+		transition: all 0.2s ease-in-out;
+		z-index: 99999;
+		right: 1.5rem;
+
+	}
+
+	.dropdown-menu li {
+		border-bottom: $dropdown-inner-border;
+		color: $dropdown-color;
+		list-style: none;
+		padding: $dropdown-padding / 2;
+	}
+
+	.dropdown-menu li:hover {
+		background: $dropdown-background-hover;
+	}
+
+	.dropdown-menu li:first-child {
+		border-top-left-radius: $base-border-radius;
+		border-top-right-radius: $base-border-radius;
+	}
+
+	.dropdown-menu li:last-child {
+		border: 0;
+		border-bottom-left-radius: $base-border-radius;
+		border-bottom-right-radius: $base-border-radius;
+	}
+
+	.show-menu {
+		display: block;
+	}
+}
+
+// Inspired by code by www.HUSAMUI.com

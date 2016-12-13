@@ -11,7 +11,9 @@
 			<input class="float-right" type="submit" />
 		</form>
 	</fieldset>
+	<p class="note">* Select a table row for more actions</p>
 	<table>
+
 		<thead>
 		<tr>
 			<th>Cadence Name</th>
@@ -21,7 +23,7 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr data-ng-repeat="c in vm.cadences">
+		<tr data-ng-repeat="c in vm.cadences" data-ng-click="vm.select(c, $index)" data-ng-class="{selected: vm.isSelected($index)}">
 			<td>{{c.name}}</td>
 			<td>{{c.owner}}</td>
 			<td>
@@ -36,4 +38,18 @@
 		</tbody>
 	</table>
 
+	<div data-ng-if="vm.selectedRow !== false" class="action-menu">
+		<div class="dropdown">
+			<div class="dropdown-container">
+				<p class="dropdown-button" data-ng-click="vm.toggleMenu()">Click to Manage</p>
+				<ul class="dropdown-menu dropdown-select" data-ng-if="vm.menuOpen">
+					<li data-ng-click=>Manage Tags</li>
+					<li data-ng-click="vm.copyCadence(vm.selectedRow)">Copy</li>
+					<li>Archive</li>
+					<li>Make Private</li>
+					<li data-ng-click="vm.deleteCadence(vm.selectedRow)">Delete</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>

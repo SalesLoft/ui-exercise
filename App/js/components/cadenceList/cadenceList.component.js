@@ -19,6 +19,12 @@
 		vm.triggerAddCadence = triggerAddCadence;
 		vm.addNewCadence = addNewCadence;
 		vm.deleteCadence = deleteCadence;
+		vm.select = select;
+		vm.selectedRow = false;
+		vm.isSelected = isSelected;
+		vm.menuOpen = false;
+		vm.toggleMenu = toggleMenu;
+		vm.copyCadence = copyCadence;
 		
 		
 		activate();
@@ -46,17 +52,39 @@
 		}
 
 		function addNewCadence() {
-			//dataservice.saveCadence(vm.newCadence);
-
 			vm.cadences.push(vm.newCadence);
 			vm.newCadence = {};
 			vm.addingCadence = false;
 		}
 
 		function deleteCadence(index) {
-			//dataservice.deleteCadence(index);
-
 			vm.cadences.splice(index, 1);
+			vm.menuOpen = false;
+		}
+
+		function copyCadence(index) {
+			vm.newCadence = angular.copy(vm.cadences[index]);
+			vm.addNewCadence();
+			vm.menuOpen = false;
+		}
+
+
+
+
+		function select(item, index) {
+
+			if (vm.selectedRow !== index) {
+				vm.selectedRow = index;
+			} else {
+				vm.selectedRow = false;
+			}
+
+		}
+		function isSelected(index) {
+			return vm.selectedRow === index;
+		}
+		function toggleMenu() {
+			vm.menuOpen = !vm.menuOpen;
 		}
 	}
 })();

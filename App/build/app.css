@@ -187,7 +187,8 @@ body {
   font-family: "Arial"; }
   body main {
     margin: 80px 0 0;
-    background-color: transparent; }
+    background-color: transparent;
+    overflow: auto; }
   body th {
     text-align: left; }
 
@@ -196,11 +197,13 @@ table {
   padding: 0 1rem; }
   table tr {
     height: 40px; }
+    table tr:hover {
+      cursor: pointer; }
   table th {
     text-transform: uppercase; }
 
 .tag {
-  padding: .5rem;
+  padding: 0.5rem;
   margin-right: 6px;
   border: #444 1px solid;
   border-radius: 2px; }
@@ -208,7 +211,7 @@ table {
     background-color: #e1e1e1; }
   @media screen and (max-width: 44rem) {
     .tag {
-      display: block;
+      display: inline-block;
       margin-bottom: 6px; } }
 
 .stat {
@@ -223,21 +226,29 @@ table {
     .stat {
       width: 100%; } }
 
+.selected {
+  background-color: #f1fafe; }
+
 .nav-container {
   height: 80px;
   background-color: #262d3f; }
   .nav-container.fixed-top {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%; }
   .nav-container .logo {
-    float: left; }
+    float: left;
+    margin-left: 1rem;
+    margin-top: 0.3rem; }
     .nav-container .logo img {
       height: 70px; }
   .nav-container ul {
-    margin: 0.75rem 1rem;
+    margin: 1.75rem 1rem;
     max-width: calc(100% - 70px); }
+    @media screen and (max-width: 44rem) {
+      .nav-container ul {
+        margin: 0.5rem 1rem; } }
     .nav-container ul li {
       color: #fff;
       display: inline;
@@ -257,6 +268,85 @@ table {
   margin: 1rem auto; }
   @media screen and (max-width: 44rem) {
     .cadence-list {
-      width: 100%; } }
+      width: 98%; } }
+
+.action-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 0 6px 0 #444;
+  background-color: #fff;
+  z-index: 200; }
+
+.note {
+  float: right;
+  color: #333;
+  font-size: 0.750rem; }
+
+.dropdown {
+  line-height: 1.5; }
+  .dropdown .dropdown-container {
+    display: inline-block;
+    position: relative;
+    text-align: center; }
+  .dropdown .dropdown-button {
+    background: #499cc4;
+    border: 1px solid silver;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font-size: 1rem;
+    line-height: 40px;
+    margin: .5rem 1.5rem;
+    padding: 0 2.5em 0 0.5em;
+    position: relative;
+    font-weight: bold; }
+    @media screen and (max-width: 900px) {
+      .dropdown .dropdown-button {
+        font-size: 1em;
+        padding: 0 2.5em 0 0.5em; } }
+  .dropdown .dropdown-button:hover {
+    background-color: #3e95c0; }
+  .dropdown .dropdown-button::after {
+    color: #333;
+    content: "\25B4";
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 0; }
+  .dropdown .dropdown-menu {
+    background: #fff;
+    border: 1px solid silver;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+    overflow: show;
+    padding: 0;
+    position: absolute;
+    bottom: 50px;
+    transition: all 0.2s ease-in-out;
+    z-index: 99999;
+    right: 1.5rem; }
+  .dropdown .dropdown-menu li {
+    border-bottom: 1px solid silver;
+    color: #333;
+    list-style: none;
+    padding: 0.5em; }
+  .dropdown .dropdown-menu li:hover {
+    background: #f7f7f7; }
+  .dropdown .dropdown-menu li:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+  .dropdown .dropdown-menu li:last-child {
+    border: 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px; }
+  .dropdown .show-menu {
+    display: block; }
 
 /*# sourceMappingURL=app.css.map */

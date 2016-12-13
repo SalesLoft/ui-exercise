@@ -360,6 +360,12 @@ e?"one":"other"}})}]),F(function(){oe(A.document,Lc)}))})(window);!window.angula
 		vm.triggerAddCadence = triggerAddCadence;
 		vm.addNewCadence = addNewCadence;
 		vm.deleteCadence = deleteCadence;
+		vm.select = select;
+		vm.selectedRow = false;
+		vm.isSelected = isSelected;
+		vm.menuOpen = false;
+		vm.toggleMenu = toggleMenu;
+		vm.copyCadence = copyCadence;
 		
 		
 		activate();
@@ -387,17 +393,39 @@ e?"one":"other"}})}]),F(function(){oe(A.document,Lc)}))})(window);!window.angula
 		}
 
 		function addNewCadence() {
-			//dataservice.saveCadence(vm.newCadence);
-
 			vm.cadences.push(vm.newCadence);
 			vm.newCadence = {};
 			vm.addingCadence = false;
 		}
 
 		function deleteCadence(index) {
-			//dataservice.deleteCadence(index);
-
 			vm.cadences.splice(index, 1);
+			vm.menuOpen = false;
+		}
+
+		function copyCadence(index) {
+			vm.newCadence = angular.copy(vm.cadences[index]);
+			vm.addNewCadence();
+			vm.menuOpen = false;
+		}
+
+
+
+
+		function select(item, index) {
+
+			if (vm.selectedRow !== index) {
+				vm.selectedRow = index;
+			} else {
+				vm.selectedRow = false;
+			}
+
+		}
+		function isSelected(index) {
+			return vm.selectedRow === index;
+		}
+		function toggleMenu() {
+			vm.menuOpen = !vm.menuOpen;
 		}
 	}
 })();
@@ -454,7 +482,9 @@ angular.module('app').run(['$templateCache', function($templateCache) {
     "			<input class=\"float-right\" type=\"submit\" />\n" +
     "		</form>\n" +
     "	</fieldset>\n" +
+    "	<p class=\"note\">* Select a table row for more actions</p>\n" +
     "	<table>\n" +
+    "\n" +
     "		<thead>\n" +
     "		<tr>\n" +
     "			<th>Cadence Name</th>\n" +
@@ -464,7 +494,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
     "		</tr>\n" +
     "		</thead>\n" +
     "		<tbody>\n" +
-    "		<tr data-ng-repeat=\"c in vm.cadences\">\n" +
+    "		<tr data-ng-repeat=\"c in vm.cadences\" data-ng-click=\"vm.select(c, $index)\" data-ng-class=\"{selected: vm.isSelected($index)}\">\n" +
     "			<td>{{c.name}}</td>\n" +
     "			<td>{{c.owner}}</td>\n" +
     "			<td>\n" +
@@ -479,6 +509,20 @@ angular.module('app').run(['$templateCache', function($templateCache) {
     "		</tbody>\n" +
     "	</table>\n" +
     "\n" +
+    "	<div data-ng-if=\"vm.selectedRow !== false\" class=\"action-menu\">\n" +
+    "		<div class=\"dropdown\">\n" +
+    "			<div class=\"dropdown-container\">\n" +
+    "				<p class=\"dropdown-button\" data-ng-click=\"vm.toggleMenu()\">Click to Manage</p>\n" +
+    "				<ul class=\"dropdown-menu dropdown-select\" data-ng-if=\"vm.menuOpen\">\n" +
+    "					<li data-ng-click=>Manage Tags</li>\n" +
+    "					<li data-ng-click=\"vm.copyCadence(vm.selectedRow)\">Copy</li>\n" +
+    "					<li>Archive</li>\n" +
+    "					<li>Make Private</li>\n" +
+    "					<li data-ng-click=\"vm.deleteCadence(vm.selectedRow)\">Delete</li>\n" +
+    "				</ul>\n" +
+    "			</div>\n" +
+    "		</div>\n" +
+    "	</div>\n" +
     "</div>\n"
   );
 
