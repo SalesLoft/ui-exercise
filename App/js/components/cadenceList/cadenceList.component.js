@@ -89,6 +89,7 @@
 			vm.cadences[vm.selectedRow].tags = vm.tempTags;
 			vm.menuOpen = false;
 		}
+		
 		function triggerManageTags() {
 
 			if (!vm.manageTags){
