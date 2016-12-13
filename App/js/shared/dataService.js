@@ -5,12 +5,6 @@ angular
 dataservice.$inject = ['$q'];
 
 function dataservice($q) {
-
-	return {
-		getCadences: getCadences,
-		saveCadence: saveCadence
-	};
-
 	var memData = [{
 		name: "Some Cadence",
 		owner: "Drew Pfundstein",
@@ -34,4 +28,9 @@ function dataservice($q) {
 	function deleteCadence(index) {
 		memData.splice(index, 1);
 	}
+
+	return {
+		getCadences: getCadences,
+		saveCadence: saveCadence
+	};
 }
