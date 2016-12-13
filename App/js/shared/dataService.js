@@ -5,6 +5,12 @@ angular
 dataservice.$inject = ['$q'];
 
 function dataservice($q) {
+
+	return {
+		getCadences: getCadences,
+		saveCadence: saveCadence
+	};
+
 	var memData = [{
 		name: "Some Cadence",
 		owner: "Drew Pfundstein",
@@ -15,10 +21,6 @@ function dataservice($q) {
 			removed: 2
 		}
 	}];
-	return {
-		getCadences: getCadences,
-		saveCadence: saveCadence
-	};
 
 	function getCadences() {
 		var deferred = $q.defer();
