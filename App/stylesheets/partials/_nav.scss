@@ -1,0 +1,39 @@
+.nav-container {
+	height: 80px;
+	background-color: $header-color;
+
+	&.fixed-top {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	.logo {
+		float: left;
+		margin-left: 1rem;
+		margin-top: 0.3rem;
+		img {
+			height: 70px;
+		}
+	}
+
+	ul {
+		margin: 1.75rem 1rem;
+		max-width: calc(100% - 70px);
+
+		@media screen and (max-width: $mobile) {
+			margin: 0.5rem 1rem;
+		}
+
+		li {
+			color: #fff;
+			display: inline;
+			padding: 1rem;
+
+			@media screen and (max-width: $mobile) {
+				padding: .5rem .25rem;
+			}
+		}
+	}
+}

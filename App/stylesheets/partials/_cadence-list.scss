@@ -1,0 +1,32 @@
+.float-right {
+	float: right;
+}
+
+.add-cadence {
+	width: 100%;
+}
+
+.cadence-list {
+	width: 90%;
+	margin: 1rem auto;
+	@media screen and (max-width: $mobile) {
+		width: 98%;
+	}
+}
+
+.action-menu {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	box-shadow: 0 0 6px 0 $dark-grey;
+	background-color: #fff;
+	z-index: 200;
+}
+
+.note {
+	float: right;
+	color: $font-black;
+	font-size: 0.750rem;
+}

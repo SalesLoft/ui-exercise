@@ -1,0 +1,63 @@
+<div class="cadence-list">
+	<header>
+		<h1>Cadences</h1>
+
+	</header>
+	<a data-ng-click="vm.triggerAddCadence()">Add Cadence</a>
+	<fieldset class="add-cadence" data-ng-if="vm.addingCadence">
+		<form action="#" data-ng-submit="vm.addNewCadence()">
+			<input type="text" placeholder="Cadence Name" data-ng-model="vm.newCadence.name"/>
+			<input type="text" placeholder="Cadence Owner" data-ng-model="vm.newCadence.owner"/>
+			<input class="float-right" type="submit" />
+		</form>
+	</fieldset>
+	<fieldset class="manage-tags" data-ng-if="vm.manageTags">
+		<hr>
+		<form action="#" data-ng-submit="vm.updateTags()">
+			<a href="#" data-ng-click="vm.addTag()">Add Tag</a>
+			<input data-ng-repeat="tag in vm.tempTags" type="text" placeholder="Tag Name" data-ng-model="tag" ng-blur="vm.tempTags[$index] = tag"/>
+			<input class="float-right" type="submit" placeholder="Update" />
+		</form>
+	</fieldset>
+	<p class="note">* Select a table row for more actions</p>
+	<table>
+
+		<thead>
+		<tr>
+			<th>Cadence Name</th>
+			<th>Owner</th>
+			<th>Tags</th>
+			<th>Stats</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr data-ng-repeat="c in vm.cadences" data-ng-click="vm.select(c, $index)" data-ng-class="{selected: vm.isSelected($index)}">
+			<td>{{c.name}}</td>
+			<td>{{c.owner}}</td>
+			<td>
+				<span class="tag" data-ng-repeat="t in c.tags">{{t}}</span>
+			</td>
+			<td>
+				<span class="stat" data-stat-name="Total">{{c.stats.total}}</span>
+				<span class="stat" data-stat-name="Completed">{{c.stats.completed}}</span>
+				<span class="stat" data-stat-name="Removed">{{c.stats.removed}}</span>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<div data-ng-if="vm.selectedRow !== false" class="action-menu">
+		<div class="dropdown">
+			<div class="dropdown-container">
+				<p class="dropdown-button" data-ng-click="vm.toggleMenu()">Click to Manage</p>
+				<ul class="dropdown-menu dropdown-select" data-ng-if="vm.menuOpen">
+					<li data-ng-click="vm.triggerManageTags()">Manage Tags</li>
+					<li data-ng-click="vm.copyCadence(vm.selectedRow)">Copy</li>
+					<li>Archive</li>
+					<li>Make Private</li>
+					<li data-ng-click="vm.deleteCadence(vm.selectedRow)">Delete</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
