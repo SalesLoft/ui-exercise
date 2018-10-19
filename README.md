@@ -18,7 +18,7 @@ Spend time on both the UI/UX and the actual functionality of the list view. This
 
 Try to time box this exercise to take no longer than 4 hours. If you don't feel like you're able to finish within that timeframe, focus on making parts of the exercise great rather than submitting a project that's 80% complete across the board. This gives engineers an opportunity to explore what it's like to work with you while we're fleshing out the remaining work or expanding on it.
 
-Also, please don't use this an an opportunity to learn a new framework - instead, use tools and technologies you are comfortable with so we can have an in-depth discussion about your decisions and approach. 
+Also, please don't use this as an opportunity to learn a new framework - instead, use tools and technologies you are comfortable with so we can have an in-depth discussion about your decisions and approach. 
 
 ## Submission
 
