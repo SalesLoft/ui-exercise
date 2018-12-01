@@ -1,0 +1,44 @@
+@import '../../assets/stylesheets/_palette.scss';
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.top-navigation {
+  height: 50px;
+}
+
+.panel-layout {
+  display: flex;
+  flex-direction: row;
+
+  .sidebar {
+    background-color: $color_white;
+    min-width: 200px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .sidebar-item {
+      color: $color_black;
+      padding: 10px;
+      margin: 5px 0px;
+      text-decoration: none;
+
+      &.active {
+        color: $color_red;
+        background-color: lighten($color_red, 40%);
+        border-top-right-radius: 20%;
+        border-bottom-right-radius: 20%;
+        width: 80%;
+      }
+    }
+  }
+
+  .messages-wrapper {
+    padding: 10px;
+  }
+}
+
