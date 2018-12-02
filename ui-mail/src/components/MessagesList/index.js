@@ -61,19 +61,20 @@ class MessagesList extends Component {
           selected={isAllSelected}
           onCheck={this.onCheckBoxChange.bind(this)}
           >
-            { checkList.map(message => (
-              <div className="messages-with-checkbox">
-                <CheckBox
-                  className='message-with-checkbox'
-                  name={message.subject}
-                  value={message.id}
-                  selected={message.checked}
-                  onCheck={this.onCheckBoxChange.bind(this)}
-                >
-                  <MessagesItem message={message} />
-                </CheckBox>
-              </div>
-            ))}
+          {checkList.map((message, i) => {
+            return(
+              <CheckBox
+                key={i}
+                className='message-with-checkbox'
+                name={message.subject}
+                value={message.id}
+                selected={message.checked}
+                onCheck={this.onCheckBoxChange.bind(this)}
+              >
+                <MessagesItem message={message} />
+              </CheckBox>
+              )
+          })}
         </CheckBox>
       </div>
     )

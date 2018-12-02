@@ -38,7 +38,7 @@ const MessagesItem = ({ message }) => {
 MessagesItem.propTypes = {
   message: PropTypes.shape({
     id: PropTypes.string,
-    tags: PropTypes.shape({}),
+    tags: PropTypes.array,
     subject: PropTypes.string,
     send: PropTypes.string,
     body: PropTypes.string,
