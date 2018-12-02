@@ -10,7 +10,13 @@
 
 .top-navigation {
   height: 60px;
+  padding: 10px;
   background-color: darken($color_white, 10);
+  border-bottom: 2px solid $color_black;
+
+  .open-close-btn {
+    font-size: 30px;
+  }
 
   .logo {
     color: $color_red;
@@ -36,6 +42,12 @@
       margin: 5px 0px;
       text-decoration: none;
       text-align: left;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 10px;
+      }
 
       &.active {
         color: $color_red;
@@ -60,22 +72,24 @@
     font-weight: bold;
     margin-left: 10px;
     margin-top: 20px;
+    display: flex;
+    align-items: center;
   }
 
   .tag-wrapper {
-    color: white;
+    color: $color_white;
     padding: 5px;
     margin: 5px 5px 0 10px;
     border-radius: 3px;
   }
 
   .tag-travel {
-    color: white;
+    color: $color_white;
     background-color:red;
   }
 
   .tag-work {
-    color: white;
+    color: $color_white;
     background-color:blue;
   }
 

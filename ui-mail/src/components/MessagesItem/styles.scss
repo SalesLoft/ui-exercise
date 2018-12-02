@@ -3,7 +3,7 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: $color_black;
   width: 100%;
 
   .message-wrapper:hover {
@@ -58,7 +58,7 @@ a {
   .tags {
     padding: 5px;
     font-size: 12px;
-    color: white;
+    color: $color_white;
     border-radius: 3px;
     margin-right: 3px;
 
