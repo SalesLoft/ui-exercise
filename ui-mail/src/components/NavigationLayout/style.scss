@@ -3,11 +3,20 @@
 .layout {
   display: flex;
   flex-direction: column;
+  background-color: #f4f7f7;
   width: 100%;
+  min-height: 100vh;
 }
 
 .top-navigation {
-  height: 50px;
+  height: 60px;
+  background-color: darken($color_white, 10);
+
+  .logo {
+    color: $color_red;
+    font-size: 30px;
+    font-weight: bold;
+  }
 }
 
 .panel-layout {
@@ -15,42 +24,52 @@
   flex-direction: row;
 
   .sidebar {
-    background-color: $color_white;
-    min-width: 200px;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-top: 25px;
+    box-shadow: 4px 3px 6px 0px gray;
+    min-height: 100vh;
 
     .sidebar-item {
       color: $color_black;
-      padding: 10px;
+      padding: 5px 10px;
       margin: 5px 0px;
       text-decoration: none;
+      text-align: left;
 
       &.active {
         color: $color_red;
+        font-weight: bold;
         background-color: lighten($color_red, 40%);
-        border-top-right-radius: 20%;
-        border-bottom-right-radius: 20%;
+        border-radius: 50px;
         width: 80%;
       }
     }
+  }
+
+  .sidebar-open {
+    min-width: 200px;
+  }
+
+  .sidebar-closed {
+    display: none;
   }
 
   .tag-title {
     font-size: 15px;
     font-weight: bold;
     margin-left: 10px;
+    margin-top: 20px;
   }
 
   .tag-wrapper {
     color: white;
     padding: 5px;
-    margin: 5px 0 0 10px;
+    margin: 5px 5px 0 10px;
     border-radius: 3px;
   }
 
-  .tag-travel{
+  .tag-travel {
     color: white;
     background-color:red;
   }

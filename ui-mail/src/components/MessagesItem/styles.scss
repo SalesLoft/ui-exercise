@@ -1,3 +1,6 @@
+@import '../../assets/stylesheets/_palette.scss';
+@import '../../assets/stylesheets/_mixins.scss';
+
 a {
   text-decoration: none;
   color: black;
@@ -10,6 +13,11 @@ a {
 }
 
 .message-wrapper {
+  
+  @include breakpoint(mobileonly ) {
+    flex-wrap: wrap;
+  }
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,6 +44,10 @@ a {
       text-overflow: ellipsis;
       color: gray;
       font-size: 13px;
+
+      @include breakpoint(mobileonly ) {
+        display: none;
+      }
     }
   }
 
@@ -49,6 +61,10 @@ a {
     color: white;
     border-radius: 3px;
     margin-right: 3px;
+
+    @include breakpoint(mobileonly ) {
+      display: none;
+    }
     
     &.tag-work {
       background-color: lighten(blue, 35%);
