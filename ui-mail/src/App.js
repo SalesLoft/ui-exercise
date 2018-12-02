@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <NavigationLayout>
+        <NavigationLayout tags={messagesData}>
           <Switch>
             <Route exact path='/' render={props => <MessagesIndex {...props} messagesData={messagesData} />}/>
             <Route path='/messages/:id'

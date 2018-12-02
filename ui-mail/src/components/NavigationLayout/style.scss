@@ -37,8 +37,32 @@
     }
   }
 
+  .tag-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  .tag-wrapper {
+    color: white;
+    padding: 5px;
+    margin: 5px 0 0 10px;
+    border-radius: 3px;
+  }
+
+  .tag-travel{
+    color: white;
+    background-color:red;
+  }
+
+  .tag-work {
+    color: white;
+    background-color:blue;
+  }
+
   .messages-wrapper {
     padding: 10px;
+    width: 100%;
   }
 }
 
