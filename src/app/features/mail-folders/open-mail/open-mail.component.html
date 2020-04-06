@@ -1,0 +1,19 @@
+<div class="open-mail text-carbonDark">
+  <div>
+    <img src="https://i.imgur.com/u4synyd.png" class="back-icon" title="Go Back" (click)="goBack()">
+    <img src="https://i.imgur.com/OPoRLZ1.png" class="back-icon" title="Delete" (click)="onDeleteOpen()">
+  </div>
+  <p class="open-subject">{{ openMail.subject }}</p>
+  <div class="open-sender">
+    <p class="sender-address">{{ openMail.sender }} </p>
+    <p> <span class="open-address">
+        <{{ openMail.address }}>
+      </span> <span class="open-time">{{ openMail.time }}</span></p>
+  </div>
+  <div class="open-message">
+    <p>{{ openMail.body }}</p>
+  </div>
+  <div *ngIf="currentFolder !== 'drafts'">
+    <img id="reply-icon" src="https://i.imgur.com/OSgsQSP.png" title="lažne ikonice -1 od 2-">
+  </div>
+</div>

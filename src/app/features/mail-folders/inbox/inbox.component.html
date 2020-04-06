@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab label="Primary">
+      <ng-template matTabContent>
+        <div class="mail-items inbox" *ngIf="inboxMails.length > 0">
+          <div class="list" *ngFor="let mail of inboxMails; let i = index" appHighlight>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input mt-3" type="checkbox" name="inlineRadioOptions" id="inlineRadio1"
+                value="option1" />
+              <a [routerLink]="[i]"><span class="sender">{{ mail.sender }}</span> <span
+                  class="subject">{{ mail.subject}}</span>
+                <span class="message">{{ mail.body }}</span> <span
+                  class="date">{{ mail.date | dateFormatPipe }}</span></a>
+              <a (click)="onDelete([i])"><img class="mail-trash" src="https://i.imgur.com/OPoRLZ1.png"
+                  title='Delete'></a>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="inboxMails.length == 0">
+          <div class="tabs">
+            <h3>Your Inbox is empty.</h3>
+          </div>
+        </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Social">
+      <ng-template matTabContent>
+        <div class="tabs">
+          <h3>Your Social tab is empty.</h3>
+          <p>Emails from social networks, media-sharing sites, dating services and other social sites will be shown
+            here.</p>
+        </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Promotions">
+      <ng-template matTabContent>
+        <div class="tabs">
+          <h3>Your Promotions tab is empty.</h3>
+          <p>Deals, offers and other marketing emails will be shown here.</p>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<router-outlet></router-outlet>

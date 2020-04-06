@@ -1,0 +1,96 @@
+/*
+ * Application global variables.
+ */
+
+// Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used
+// in components.
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+
+// Set Font Awesome font path
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+
+// ---------------------------------------------------------------------------
+// Bootstrap variables
+//
+// Override Bootstrap variables here to suite your theme.
+// Copy variables you want to customize from node_modules/bootstrap/scss/_variables.scss
+
+//
+// Color system
+//
+$carbon: #979ea1;
+$carbon-light: #c4c8c9;
+$carbon-lighter: #e2e4e4;
+$carbon-lightest: #e9eaed;
+$carbon-dark: #667075;
+
+$ruby-dark: #c32026;
+$ruby: #e31c3d;
+$ruby-light: #e59393;
+$ruby-lighter: #ebafaf;
+$ruby-lightest: #f9dede;
+$magenta-dark: #762a83;
+$magenta-light: #af8dc3;
+$magenta-lighter: #e7d4e8;
+
+$green-dark: #7fbf7b;
+$green-light: #d9f0d3;
+$yellow-sea: #f1a340;
+
+$lightblue: #67a9cf;
+$crusta: #ef8a62;
+$blueDark: #2478a9;
+
+$white: #fff !default;
+$gray-100: #fdf6e3 !default;
+$gray-200: #eee8d5 !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #839496 !default; // Line footer color
+$gray-700: #495057 !default; // Line p color
+$gray-800: #073642 !default; // Line heading color
+$gray-900: #002b36 !default;
+$black: #000 !default;
+
+$success: $green-dark;
+$info: $yellow-sea;
+$warning: $green-light;
+$danger: $ruby-dark;
+$carbonDark: $carbon-dark;
+$carbonLight: $carbon-light;
+$carbonLighter: $carbon-lighter;
+$carbonLightest: $carbon-lightest;
+
+$theme-colors: (
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "white": $white,
+  "carbonDark": $carbonDark,
+  "carbonLight": $carbonLight,
+  "carbonLighter": $carbonLighter,
+  "carbonLightest": $carbonLightest,
+);
+
+//Components
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
+
+
+$body-bg: $white;
+$body-color: $gray-200;
+$link-color: $info;
+$link-hover-color: $link-color;
+$component-active-color: rgba(255,255,255,.75);
+$component-active-bg: $carbon-light;$input-bg: transparent;
+$input-disabled-bg: $carbon-dark;
+$input-border-color: $carbon-light;
+$input-placeholder-color: $carbon-light;
+$input-group-addon-color: $carbon-light;
+$input-group-addon-bg: $carbon-dark;
+$input-color: $carbon-light;
+$input-focus-border-color: lighten($carbon-lightest, 25%);
