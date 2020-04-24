@@ -1,0 +1,24 @@
+@import '../../../../scss/theme-variables.scss';
+
+.fa-arrow-left {
+  cursor: pointer;
+  padding: 3px;
+}
+
+.input-group-text {
+  border-color: inherit;
+  border-right: none;
+  border-radius: 0;
+  height: 40px;
+  border: 1px solid $carbon-lightest;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.control-height {
+  height: 40px;
+  border: none;
+}

@@ -1,0 +1,62 @@
+<div class="shadow pl-4">
+  <div class="row">
+    <div class="d-flex align-items-center col-2">
+      <h1 class="heading-medium pr-4 mb-0">
+        <i (click)="collapse = !collapse" AppToggleCollapsible class="fas fa-bars text-carbonDark"></i>
+      </h1>
+      <a>
+        <img id="header-image" src="https://i.imgur.com/eVJbJ3K.png" alt="Gmail">
+      </a>
+    </div>
+
+    <div class="col-6">
+      <div class="input-group form-group search-input-group pt-2">
+        <span class="input-group-text bg-carbonLightest"><i class="fa fa-search text-carbonDark"></i></span>
+        <input type="text" id="search_mail" class="form-control control-height bg-carbonLightest p-1 heading-small"
+          placeholder="Search mail" />
+      </div>
+    </div>
+
+    <div class="col-4 d-flex justify-content-end pt-3 pr-5">
+      <h1 class="heading-medium pr-4">
+        <a class="text-carbonDark" role="menuitem" [ngbTooltip]="template1" placement="bottom">
+          <i class="far fa-question-circle fa-2x"></i>
+        </a>
+      </h1>
+
+      <h1 class="heading-medium pr-4">
+        <a class="text-carbonDark heading-large text-carbonDark" role="menuitem" [ngbTooltip]="template2" placement="bottom">
+          <i class="fas fa-th"></i>
+        </a>
+      </h1>
+
+      <h1 class="heading-medium pr-5">
+        <a class="text-carbonDark text-carbonDark" role="menuitem" [ngbTooltip]="template3" placement="bottom">
+          <i class="fas fa-user-circle fa-2x"></i>
+        </a>
+      </h1>
+      
+      <ng-template #template1>
+        <label class="toolptipname tbl-display heading-small">Support</label>
+      </ng-template>
+      <ng-template #template2>
+        <label class="toolptipname tbl-display heading-small">Google apps</label>
+      </ng-template>
+      <ng-template #template3>
+        <div class="d-flex flex-column">
+          <label class="toolptipname tbl-display heading-small">Google account</label>
+        <label class="toolptipname tbl-display heading-small">Harish Bonikela</label>
+        <label class="toolptipname tbl-display heading-small">harish.bonikela@gmail.com</label>
+        </div>
+      </ng-template>
+
+      <!-- <div ngbDropdown class="d-inline-block align-bottom" placement="bottom-right">
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">Profile</button>
+          <button class="dropdown-item">Change Password</button>
+          <button class="dropdown-item" (click)="logout()">Logout</button>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

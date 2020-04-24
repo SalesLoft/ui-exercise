@@ -1,0 +1,20 @@
+<div class="mail-items" *ngIf="draftsMail.length > 0">
+  <div class="list" *ngFor="let mail of draftsMail; let i = index" appHighlight>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input mt-3" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+      <a [routerLink]="[i]"><span class="sender">{{ mail.sender }}</span> <span
+          class="subject">{{ mail.subject }}</span>
+        <span class="message">{{ mail.body }}</span> <span class="date">{{ mail.date | dateFormatPipe }}</span></a>
+      <a (click)="onDelete([i])"><img class="mail-trash" src="https://i.imgur.com/OPoRLZ1.png" title='Delete'></a>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="draftsMail.length == 0">
+  <div class="tabs empty empty-drafts">
+    <p>You don't have any saved drafts.</p>
+    <p>Saving a draft allows you to keep a message you aren't ready to send yet.</p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

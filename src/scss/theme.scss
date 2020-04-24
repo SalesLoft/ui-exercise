@@ -1,0 +1,683 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+ @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+  font-size: 0.8rem;
+  color: white;
+  // overflow-x: hidden;
+}
+
+
+.container {
+  width: 1200px;
+  height: 950px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid black;
+}
+
+.heading-large {
+  font-size: 1.5rem;
+}
+
+.position-label .tooltip-inner {
+  width: 275px !important;
+  border: 2px solid;
+}
+
+.heading-xlarge {
+  font-size: 3rem;
+}
+
+.heading-medium {
+  font-size: 1.25rem;
+}
+
+.heading-small {
+  font-size: 1rem;
+}
+
+.heading-xsmall {
+  font-size: 0.75rem;
+}
+
+label {
+  font-size: 0.875rem;
+}
+
+.page-heading-small {
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+}
+
+.body-small {
+  font-size: 0.875rem;
+  color: white;
+}
+
+.body-xsmall {
+  font-size: 0.75rem;
+  color: white;
+}
+
+.body-small-disabled {
+  font-size: 0.875rem;
+  color: $carbon-dark;
+}
+
+.body-small-error {
+  font-size: 0.875rem;
+  color: $ruby-dark;
+}
+
+a {
+  font-size: 0.875rem;
+  color: $carbon-lighter;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-secondary {
+  color: $carbon-light;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+.ng-draggable {
+  cursor: move;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button[disabled],
+button[disabled]:hover,
+button[disabled]:active {
+  cursor: not-allowed;
+}
+
+
+// Input properties
+textarea {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  color: $carbon-light;
+  background-color: $carbon-dark;
+  border-color: 1px solid $carbon-lighter;
+}
+
+.input-border {
+  border-radius: 3px;
+}
+
+//tooltip
+.tooltip-inner {
+  text-align: left;
+  max-width: 400px;
+}
+
+.error-state {
+  color: $ruby;
+  display: block;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.brdr-none {
+  border: none;
+}
+
+.auto-scrolly {
+  overflow-y: auto;
+}
+
+.no-cursor {
+  cursor: auto !important;
+}
+
+.clickable-ele {
+  cursor: pointer;
+}
+
+.mail {
+  width: 100%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  box-shadow: inset 0 -1px 0 0 rgba(100, 121, 143, 0.122);
+  font-family: Roboto;
+}
+
+.header {
+  background-color: white;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h3 {
+  margin: 0 auto;
+}
+
+#header-image {
+  padding-left: 28px;
+  padding-top: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+.container {
+  width: 1200px;
+  height: 950px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid black;
+}
+
+.mail-folders {
+  width: 200px;
+  height: 620px;
+  float: left;
+  box-sizing: border-box;
+  margin: 10px;
+}
+
+.compose {
+  display: block;
+  width: 145px;
+  height: 48px;
+  border: 1px solid #D1D1D1;
+  border-radius: 24px;
+  background-color: white;
+  cursor: pointer;
+  margin-bottom: 15px;
+  box-shadow: #DEDEDE 0 1px 2px 1px;
+  transition: box-shadow .10s linear;
+}
+
+.compose:hover {
+  box-shadow: 0 2px 3px 0 rgba(60, 64, 67, 0.302), 0 3px 3px 1px rgba(60, 64, 67, 0.149);
+}
+
+.compose:focus {
+  outline: none;
+}
+
+#compose-img {
+  padding-right: 15px;
+  vertical-align: middle;
+}
+
+#compose-txt {
+  display: inline-block;
+  letter-spacing: .25px;
+  color: #3c4043;
+  font-weight: 700;
+}
+
+.active-inbox {
+  background-color: #fce8e6;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  color: #d93025 !important;
+}
+
+.active {
+  background-color: #e8eaed;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  font-weight: 700;
+}
+
+.folder-links {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 170px;
+  height: 32px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: 0.2px;
+  outline: none;
+}
+
+.icon {
+  margin: 0 auto;
+  padding-right: 15px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  outline: none;
+  fill: #202124;
+}
+
+.name {
+  display: inline-block;
+  width: 50px;
+  padding-right: 5px;
+  padding-bottom: 7px;
+}
+
+.name-inbox {
+  font-weight: 700;
+}
+
+.counter {
+  padding-left: 40px;
+  margin-left: 5px;
+  font-size: 14px;
+  text-align: right;
+  font-weight: 400;
+  color: #5f6368;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+.tabs {
+  width: 500px;
+  margin: 10px auto;
+  color: #666;
+}
+
+.tabs h3 {
+  font-size: 16px;
+}
+
+.tabs p {
+  font-size: 14px;
+}
+
+.empty {
+  width: 600px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.empty-drafts {
+  width: 700px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.mail-items {
+  width: 910px;
+  height: 620px;
+  float: left;
+  box-sizing: border-box;
+  margin-top: 73px;
+}
+
+.list {
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 35px;
+  border-bottom: 1px solid #D1D1D1;
+}
+
+.sender {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+  padding-right: 10px;
+  padding-left: 5px;
+  padding-top: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.subject {
+  display: inline-block;
+  width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.message {
+  display: inline-block;
+  width: 420px;
+  padding-right: 20px;
+  color: #5f6368;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  vertical-align: bottom;
+}
+
+.date {
+  display: inline-block;
+  width: 93px;
+}
+
+.mail-trash {
+  margin: 0 auto;
+  padding-left: 5px;
+  position: relative;
+  top: 3px;
+  left: 5px;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.inbox {
+  width: 910px;
+  height: 620px;
+  float: left;
+  box-sizing: border-box;
+  margin-top: 24px;
+}
+
+.trash {
+  margin-top: 1px;
+}
+
+#trash-message {
+  width: 910px;
+  height: 63px;
+  font-size: 14px;
+  color: #5f6368;
+  background-color: #f2f4f5;
+  text-align: center;
+}
+
+#trash-message p {
+  padding-top: 15px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+#trash-message p:nth-child(2) {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+#trash-message a {
+  color: #1a73e8;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.open-mail {
+  width: 900px;
+  margin-left: 220px;
+  margin-top: 15px;
+}
+
+.open-subject {
+  font-size: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #CFCFCF;
+}
+
+.open-sender {
+  font-size: 15px;
+}
+
+.open-sender p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.open-address {
+  display: inline-block;
+  width: 700px;
+  font-size: 14px;
+  color: #7A7A7A;
+}
+
+
+.open-time {
+  padding-left: 85px;
+}
+
+.open-message {
+  width: 700px;
+}
+
+.sender-address {
+  display: inline-block;
+  width: 700px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.back-icon {
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 5px auto auto;
+}
+
+.back-icon:hover {
+  background-color: #EDEDED;
+  border-radius: 100%;
+}
+
+#reply-icon {
+  margin-top: 20px;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.new-message {
+  border: 1px solid #404040;
+  height: 600px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+#new-message {
+  width: 800px;
+  background-color: #404040;
+  color: white;
+  margin: 0 auto;
+  height: 40px;
+  padding-top: 11px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+
+.new-info {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 15px;
+  padding-left: 5px;
+  outline: none;
+  border: 1px solid #E0E0E0;
+}
+
+textarea {
+  resize: none;
+  font-size: 15px;
+}
+
+#text {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 5px 5px 0 7px;
+  border: none;
+  outline: none;
+}
+
+.button {
+  width: 72px;
+  height: 36px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+}
+
+#send {
+  background-color: #1a73e8;
+  margin: 10px 5px 5px 15px;
+}
+
+#send:hover {
+  background-color: #297BE6;
+}
+
+#cancel {
+  float: right;
+  margin: 10px 15px 5px 5px;
+  background-color: #757575;
+}
+
+#cancel:hover {
+  background-color: #7D7D7D;
+}
+
+#new-footer {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  height: 55px;
+}
+
+#send-icons {
+  vertical-align: -9px;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 3px solid #6BD671;
+}
+
+.ng-invalid:not(form) {
+  border-left: 3px solid #de5448;
+}
+
+#todos {
+  width: 800px;
+  height: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#todos .mat-tab-labels {
+  display: block;
+  margin-top: 9px;
+}
+
+#new-todo {
+  width: 300px;
+  height: 38px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #5f6368;
+  outline: none;
+  line-height: 30px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+#new-todo:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+#new-todo:focus {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 2px 1px rgba(60, 64, 67, 0.149);
+}
+
+#todo-button {
+  width: 35px;
+  height: 35px;
+  margin-left: 5px;
+  position: relative;
+  top: 15px;
+  left: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.todo-item {
+  width: 400px;
+  height: 36px;
+  display: inline-block;
+  padding-top: 7px;
+  border-bottom: 1px solid #D1D1D1;
+}
+
+.completed {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 7px;
+  float: left;
+}
+
+.item-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  padding-right: 5px;
+  padding-top: 10px;
+  float: left;
+  text-align: left;
+  margin: 0 auto;
+  word-break: break-all;
+}
+
+.todo-delete {
+  float: right;
+  margin-top: 8px;
+  margin-right: 5px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}

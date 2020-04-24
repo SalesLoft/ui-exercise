@@ -1,0 +1,40 @@
+<div id="todos">
+  <mat-tab-group animationDuration="0ms">
+    
+    <mat-tab label="Active">
+      <ng-template matTabContent>
+        <div>
+          <div>
+            <input type="text" #todoItem (keydown.enter)="onAddTodo(todoItem)" id="new-todo" maxlength="35" placeholder="add new">
+            <img src="https://i.imgur.com/PAOCgPo.png" (click)=onAddTodo(todoItem) id="todo-button" title="add todo">
+          </div>
+          <div *ngFor="let todo of todos; let i = index">
+            <div class="todo-item">
+              <input type="checkbox" class="checkbox" (click)="completed(i)" title="completed?">
+              <span class="item-name">{{ todo }}</span>
+              <img src="https://i.imgur.com/LaVrjCb.png" title="remove" (click)="onDelete(i)" class="todo-delete">
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab label="Completed">
+      <ng-template matTabContent>
+
+        <div *ngFor="let completed of completedTodos; let i = index">
+          <div class="todo-item">
+            <input type="checkbox" class="checkbox" checked (click)=notCompleted(i) title="not completed?">
+            <span class="item-name">{{ completed }}</span>
+            <img src="https://i.imgur.com/LaVrjCb.png" title="remove" (click)="deleteCompleted(i)" class="todo-delete">
+          </div>
+        </div>
+        <div *ngIf="completedTodos.length == 0">
+          <div class="tabs">
+            <h3>No completed todos.</h3>
+          </div>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>

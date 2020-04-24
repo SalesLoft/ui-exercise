@@ -1,0 +1,35 @@
+<div class="mail-folders">
+    <div>
+      <button [disabled]="checkIfopen" class="compose" (click)="newMail()"> <img id="compose-img" src="https://i.imgur.com/qR7hTaw.png"
+          alt="new message"><span id="compose-txt">Compose</span></button>
+    </div>
+    <div class="folder-links" [routerLink]="['inbox']" routerLinkActive="active-inbox">
+      <img class="icon" src="https://i.imgur.com/cWBL9RB.png" alt="inbox">
+      <a [routerLink]="['inbox']" class="folder" routerLinkActive="active-inbox"> <span class="name name-inbox">Inbox
+        </span> <span class="counter">{{
+          mailCounter('inbox') }}</span></a>
+    </div>
+    <div class="folder-links" [routerLink]="['sent']" routerLinkActive="active">
+      <img class="icon" src="https://i.imgur.com/7Obbnqz.png" alt="sent">
+      <a [routerLink]="['sent']" class="folder" routerLinkActive="active"> <span class="name">Sent </span> <span class="counter">{{
+          mailCounter('sent') }}</span></a>
+    </div>
+    <div class="folder-links" [routerLink]="['drafts']" routerLinkActive="active">
+      <img class="icon" src="https://i.imgur.com/4aNslcN.png" alt="drafts">
+      <a [routerLink]="['drafts']" class="folder" routerLinkActive="active"> <span class="name">Drafts </span> <span
+          class="counter">{{
+          mailCounter('drafts') }}</span></a>
+    </div>
+    <div class="folder-links" [routerLink]="['trash']" routerLinkActive="active">
+      <img class="icon" src="https://i.imgur.com/OPoRLZ1.png" alt="trash">
+      <a [routerLink]="['trash']" class="folder" routerLinkActive="active"> <span class="name">Trash </span> <span class="counter">{{
+          mailCounter('trash') }}</span></a>
+    </div>
+    <br>
+    <div class="folder-links" [routerLink]="['notes']">
+      <img class="icon" src="https://i.imgur.com/Mi7Y0Gx.png" alt="notes">
+      <a [routerLink]="['notes']" class="folder"> <span class="name">Notes </span></a>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

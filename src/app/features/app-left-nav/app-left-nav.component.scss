@@ -1,0 +1,25 @@
+@import '../../../scss/theme-variables.scss';
+
+.collapsible-column {
+  width:10%;
+}
+
+.container-fluid .row {
+  flex-wrap: nowrap;
+}
+
+:host.collapsible-column {
+  // background-color:  $carbon-light;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
+  min-width: 9.5rem;
+}
+
+:host.is-open {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
