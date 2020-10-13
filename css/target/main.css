@@ -1,0 +1,59 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+.salesloft-mail-wrapper {
+  font-family: arial, sans-serif; }
+  .salesloft-mail-wrapper h1 {
+    font-size: 32px;
+    margin: 0; }
+  .salesloft-mail-wrapper .heading {
+    padding: 10px 10px;
+    background-color: #F4F4F4; }
+  .salesloft-mail-wrapper .content .content-sidebar {
+    display: none; }
+    .salesloft-mail-wrapper .content .content-sidebar .folder-selection {
+      font-weight: bold;
+      cursor: pointer; }
+      .salesloft-mail-wrapper .content .content-sidebar .folder-selection.active {
+        color: #E04B39; }
+  .salesloft-mail-wrapper .content .content-main {
+    width: 100%; }
+    .salesloft-mail-wrapper .content .content-main .list-view .email-list {
+      list-style: none;
+      padding: 0; }
+      .salesloft-mail-wrapper .content .content-main .list-view .email-list .email-item {
+        border-bottom: solid 1px #d7d7d7;
+        cursor: pointer;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+        .salesloft-mail-wrapper .content .content-main .list-view .email-list .email-item span {
+          display: inline; }
+        .salesloft-mail-wrapper .content .content-main .list-view .email-list .email-item .body-sample {
+          color: #777777; }
+          .salesloft-mail-wrapper .content .content-main .list-view .email-list .email-item .body-sample * {
+            margin: 0;
+            display: inline; }
+    .salesloft-mail-wrapper .content .content-main .selected-view {
+      display: none; }
+      .salesloft-mail-wrapper .content .content-main .selected-view .email-meta span {
+        font-size: 12px; }
+      .salesloft-mail-wrapper .content .content-main .selected-view .email-meta .meta-left {
+        text-align: left; }
+      .salesloft-mail-wrapper .content .content-main .selected-view .email-meta .meta-right {
+        text-align: right; }
+      .salesloft-mail-wrapper .content .content-main .selected-view .email-meta .from-friendly {
+        font-weight: bold; }
+  @media (min-width: 640px) {
+    .salesloft-mail-wrapper .content .content-sidebar {
+      display: inline-block;
+      width: 15%;
+      vertical-align: top; }
+    .salesloft-mail-wrapper .content .content-main {
+      display: inline-block;
+      width: 84%;
+      vertical-align: top; } }
+
+/*# sourceMappingURL=main.css.map */

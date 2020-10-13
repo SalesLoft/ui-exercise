@@ -1,0 +1,106 @@
+// Color styleguide
+$color-bg-primary: #FFFFFF
+$color-bg-secondary: #F4F4F4
+$color-bg-highlight: #FFFFCC
+
+$color-icon-active: #333333
+$color-bg-inactive: #A4A4A4
+
+$color-text-primary: #222222
+$color-text-secondary: #777777
+$color-text-highlight: #E04B39
+
+$color-border-primary: #d7d7d7
+$color-border-highlight: #222222
+
+body
+	padding: 0
+	margin: 0
+
+.salesloft-mail-wrapper
+	font-family: arial, sans-serif
+
+	h1
+		font-size: 32px
+		margin: 0
+
+	.heading
+		padding: 10px 10px
+		background-color: $color-bg-secondary
+
+	.navigation
+
+	.content
+
+		.content-sidebar
+			display: none
+
+			.folder-selection
+				font-weight: bold
+				cursor: pointer
+
+				&.active
+					color: $color-text-highlight
+
+		.content-main
+			width: 100%
+
+			.list-view
+				.email-list
+					list-style: none
+					padding: 0
+
+					.email-item
+						border-bottom: solid 1px $color-border-primary
+						cursor: pointer
+						width: 100%
+						white-space: nowrap
+						overflow: hidden
+						text-overflow: ellipsis
+
+						span
+							display: inline
+
+						.body-sample
+							color: $color-text-secondary
+
+							*
+								margin: 0
+								display: inline
+
+			.selected-view
+				display: none
+				.subject-section
+					.subject-text
+
+				.email-meta
+					span
+						font-size: 12px
+
+					.meta-left
+						text-align: left
+
+					.meta-right
+						text-align: right
+
+					.from-friendly
+						font-weight: bold
+
+					.from-email
+
+					.date-sent
+
+					.quick-reply-button
+
+				.email-body
+
+		@media (min-width: 640px)
+			.content-sidebar
+				display: inline-block
+				width: 15%
+				vertical-align: top
+
+			.content-main
+				display: inline-block
+				width: 84%
+				vertical-align: top

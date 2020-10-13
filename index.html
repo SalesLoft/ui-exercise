@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/target/main.css">
+    </head>
+    <body>
+
+      <div class="salesloft-mail-wrapper">
+
+        <div class="heading">
+          <h1>SalesLoft Mail</h1>
+        </div>
+
+        <div class="navigation">
+          <button>Spam</button><button>Delete</button><button>Archive</button>
+        </div>
+
+        <div class="content">
+
+          <div class="content-sidebar">
+            <div class="folder-selection active">Inbox</div>
+            <div class="folder-selection">Starred</div>
+            <div class="folder-selection">Sent Mail</div>
+          </div>
+
+          <div class="content-main">
+            <div class="list-view">
+              <ul class="email-list">
+
+              </ul>
+            </div>
+            <div class="selected-view">
+              <div class="subject-section">
+                <h3 class="subject-text"></h3>
+              </div>
+              <div class="email-meta">
+                <div class="meta-left">
+                  <span class="from-friendly"></span> <span class="from-email"></span>
+                </div>
+                <div class="meta-right">
+                  <span class="date-sent"></span><button class="quick-reply-button">Reply</button>
+                </div>
+              </div>
+              <div class="email-body"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <script id="email-template" type="text/x-handlebars-template">
+        <li class="email-item" data-id="{{id}}" data-to-friendly="{{to-friendly}}" data-to="{{to}}" data-from="{{from}}" data-from-friendly="{{from-friendly}}" data-timestamp="{{timestamp}}" data-subject="{{subject}}" data-body="{{body}}">
+        	<span class="subject">{{subject}}</span>
+          <span><span class="from-friendly">{{from-friendly}}</span> - <span class="body-sample">{{{body}}}</span></span>
+        </li>
+      </script>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/libs/handlebars.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
